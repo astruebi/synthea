@@ -71,6 +71,7 @@ dependencies {
     implementation 'com.thoughtworks.xstream:xstream:1.4.21'
     implementation 'commons-beanutils:commons-beanutils:1.11.0'
     implementation 'net.minidev:json-smart:2.5.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.3'
   }
 
   // This dependency is found on compile classpath of this component and consumers.
