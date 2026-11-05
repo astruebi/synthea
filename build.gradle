@@ -72,6 +72,7 @@ dependencies {
     implementation 'commons-beanutils:commons-beanutils:1.11.0'
     implementation 'net.minidev:json-smart:2.5.2'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.3'
+    implementation 'ognl:ognl:3.4.16'
   }
 
   // This dependency is found on compile classpath of this component and consumers.
@@ -131,11 +132,8 @@ dependencies {
   //implementation "org.slf4j:slf4j-nop:1.7.9" // SLF4J seems to already be provided by org.apache.logging.log4j
 
   // ensure transitive dependencies do not use vulnerable log4j
-  implementation "org.apache.logging.log4j:log4j-core", {
-        version {
-            strictly '2.17.0'
-        }
-    }
+  implementation platform('org.apache.logging.log4j:log4j-bom:2.26.1')
+  implementation 'org.apache.logging.log4j:log4j-core'
 
   // Physiology simulation dependencies
   implementation files('lib/sbscl/SimulationCoreLibrary_v1.5_slim.jar')
